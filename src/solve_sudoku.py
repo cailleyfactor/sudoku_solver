@@ -1,3 +1,9 @@
+"""!@file solve_sudoku.py
+@brief Sudoku solver tool
+@details This module takes in an input.txt file, contains functions to solve a sudoku puzzle,
+and outputs one solution to a solved puzzle.
+@author Created by C. Factor on 26/11/2023
+"""
 import numpy as np
 
 # import data
@@ -31,22 +37,34 @@ all_empty_indices = np.where(puzzle == 0)
 # To access tuples of a zip, need to first make into a list
 list_of_empty_cells = list(zip(*all_empty_indices))
 
-# for empty_no in len(list_of_empty_cells):
-#     #Find index of the empty cell which is number empty_no in the list_of_empty_cells
-#     empty_index = list_of_empty_cells[empty_no]
-#     #Find corresponding row and column of the puzzle
-#     puzzle_row = puzzle[empty_index[0]]
-#     # reason this is 1 is because need to get the column value from empty_index
-#     puzzle_col = puzzle[:,empty_index[1]]
-#     Test whether the row and column have the nth
 
-empty_index = list_of_empty_cells[0]
-puzzle_row = puzzle[empty_index[0]]
-puzzle_col = puzzle[:, empty_index[1]]
-for n in range(1, 10):
-    if np.any(puzzle_row) == n and np.any(puzzle_col) == n:
-        n += 1
-    else:
-        break
-puzzle[empty_index] = n
-print(puzzle)
+def exists_conflict(puzzle, empty_index, n):
+    """
+    @brief Checks for sudoku rule conflicts
+    @details Defines the row, column, and block of a certain sudoku cell and determines if the row,
+    column, and block of a certain sudoku cell contain the number n.
+    @param puzzle: the input puzzle, as a numpy array
+    @param m: the mth empty cell in list_of_empty_cells
+    @param n: the cell value being tested to see whether it conflicts.
+    @return (bool): True if there exists a conflict, False if not
+    """
+    i = empty_index[0]
+    j = empty_index[1]
+    # Find corresponding row and column of the puzzle
+    puzzle_row = puzzle[i]
+    puzzle_col = puzzle[:, j]
+    # Find start and end of sudoku block
+    row_block_start = (i // 3) * 3
+    row_block_end = ((i // 3) * 3) + 3
+    clmn_block_start = (j // 3) * 3
+    clmn_block_end = ((j // 3) * 3) + 3
+    puzzle_block = puzzle[
+        row_block_start:row_block_end, clmn_block_start:clmn_block_end
+    ]
+    conflict = (
+        np.any(puzzle_row == n) or np.any(puzzle_col == n) or np.any(puzzle_block == n)
+    )
+    return conflict
+
+
+# define a function that uses recursion to solve the sudoku puzzles
