@@ -1,7 +1,7 @@
 """!@file solve_sudoku.py
 @brief Sudoku solver tool
 @details This module takes in an input.txt file, contains functions to solve a sudoku puzzle,
-and outputs one solution to a solved puzzle.
+and prints one solution to a solved puzzle.
 @author Created by C. Factor on 26/11/2023
 """
 import numpy as np
@@ -30,12 +30,6 @@ print(puzzle)
 # error trap to make sure that all digits are between 0-9
 if np.all(puzzle > 9) or np.all(puzzle < 0):
     print("Incorrect values in input")
-
-# find indices of empty cells
-all_empty_indices = np.where(puzzle == 0)
-
-# To access tuples of a zip, need to first make into a list
-list_of_empty_cells = list(zip(*all_empty_indices))
 
 
 def exists_conflict(puzzle, empty_index, n):
@@ -68,3 +62,43 @@ def exists_conflict(puzzle, empty_index, n):
 
 
 # define a function that uses recursion to solve the sudoku puzzles
+# used recursion/backtracking framework from Stanford C++ CS106B class notes
+def solve_sudoku_wrapper(puzzle, list_of_empty_cells, m=0):
+    """
+    @brief Solves the sudoku puzzle
+    @details Backtracking algorithm which solves the sudoku puzzle using recursion
+    @param puzzle the input puzzle
+    @param list_of_empty_cells takes in list_of_empty_cells
+    @return True if the cell is solved, False if it fails
+    """
+    # base case
+    if m == len(list_of_empty_cells):
+        return True
+    empty_index = list_of_empty_cells[m]
+    # recursive case
+    for n in range(1, 10):
+        if not exists_conflict(puzzle, empty_index, n):
+            puzzle[empty_index] = n
+            if solve_sudoku_wrapper(puzzle, list_of_empty_cells, m + 1):
+                return True
+            # backtrack to m if m+1 fails
+            puzzle[empty_index] = 0
+    return False
+
+
+def solve_sudoku(puzzle):
+    """
+    @brief Finds empty indices and calls solve_sudoku_wrapper
+    @details Determines empty indices and calls solve_sudoku_wrapper to run the backtracking algorithm
+    @param puzzle the input puzzle, as a numpy array
+    @return Returns outputs puzzle
+    """
+    # find indices of empty cells
+    all_empty_indices = np.where(puzzle == 0)
+    # To access tuples of a zip, need to first make into a list
+    list_of_empty_cells = list(zip(*all_empty_indices))
+    solve_sudoku_wrapper(puzzle, list_of_empty_cells, m=0)
+    return puzzle
+
+
+print(solve_sudoku(puzzle))
