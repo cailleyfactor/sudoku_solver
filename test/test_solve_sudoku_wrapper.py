@@ -1,8 +1,8 @@
-from src.solve_sudoku import solve_sudoku
+from src.solve_sudoku import solve_sudoku_wrapper
 import numpy as np
 
 
-def test_solve_sudoku():
+def test_solve_sudoku_wrapper():
     """
     Tests that it solves an example puzzle. Asked ChatGPT to give me an example puzzle with prompt:
     "example sudoku puzzle and answer in python as numpy array"
@@ -34,4 +34,4 @@ def test_solve_sudoku():
             [3, 4, 5, 2, 8, 6, 1, 7, 9],
         ]
     )
-    assert (solve_sudoku(puzzle) == puzzle_answer).all()
+    assert (solve_sudoku_wrapper(puzzle) == puzzle_answer).all()
