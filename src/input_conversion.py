@@ -39,7 +39,7 @@ def input_converter(puzzle):
         unique_numbers, counts = np.unique(puzzle_row, return_counts=True)
         duplicates = unique_numbers[counts > 1]
         if duplicates.size > 0:
-            raise ValueError("incorrect input value: duplicates in a row")
+            raise ValueError("Unsolvable puzzle: duplicates in a row")
 
     # error trap to make sure that there are no duplicates in a puzzle column
     for j in range(9):
@@ -49,6 +49,22 @@ def input_converter(puzzle):
         unique_numbers, counts = np.unique(puzzle_col, return_counts=True)
         duplicates = unique_numbers[counts > 1]
         if duplicates.size > 0:
-            raise ValueError("Incorrect input value: duplicates in the columns")
+            raise ValueError("Unsolvable puzzle: duplicates in the columns")
+
+    for i in range(3):
+        for j in range(3):
+            row_block_start = i * 3
+            row_block_end = (i * 3) + 3
+            clmn_block_start = j * 3
+            clmn_block_end = (j * 3) + 3
+            puzzle_block = puzzle[
+                row_block_start:row_block_end, clmn_block_start:clmn_block_end
+            ]
+            puzzle_block = puzzle_block.flatten()
+            puzzle_block = puzzle_block[puzzle_block != 0]
+            unique_numbers, counts = np.unique(puzzle_block, return_counts=True)
+            duplicates = unique_numbers[counts > 1]
+            if duplicates.size > 0:
+                raise ValueError("Unsolvable puzzle: duplicates in the block")
 
     return puzzle
