@@ -1,4 +1,4 @@
-from src.solve_sudoku import exists_conflict
+from src.exists_conflict import exists_conflict
 import numpy as np
 
 
