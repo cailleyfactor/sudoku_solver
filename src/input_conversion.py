@@ -31,6 +31,12 @@ def input_converter(puzzle):
     np_array = np.array([int(digit) for digit in str(puzzle)])
     puzzle = np_array.reshape((9, 9))
 
+    # print if there are multiple solutions to the puzzle
+    puzzle_no_zeros = puzzle[puzzle != 0]
+    puzzle_no_zeros = puzzle_no_zeros.flatten()
+    if len(puzzle_no_zeros) < 17:
+        print("There are multiple solutions to this input puzzle - add clues")
+
     # error trap to make sure that there are no duplicates in a puzzle row
     for i in range(9):
         puzzle_row = puzzle[i]
