@@ -1,15 +1,23 @@
+"""!@exists_conflict.py
+@brief Checks that an empty cell value (n) does not break the Sudoku rules
+@details This module contains the exists_conflict function.
+The function takes in a numpy array puzzle getting solved, a cell index and a cell value.
+The function tests whether the cell value can be set for the cell index and not cause conflicts with the Sudoku rules,
+i.e., the cell value is not already used in the same block, row, or column.
+@author Created by C. Factor on 08/12/2023
+"""
 import numpy as np
 
 
 def exists_conflict(puzzle, empty_index, n):
     """
-    @brief Checks for sudoku rule conflicts
-    @details Defines the row, column, and block of a certain sudoku cell and determines if the row,
-    column, and block of a certain sudoku cell contain the number n.
-    @param puzzle: the input puzzle, as a numpy array
-    @param m: the mth empty cell in list_of_empty_cells
-    @param n: the cell value being tested to see whether it conflicts.
-    @return (bool): True if there exists a conflict, False if not
+    @brief Checks that an empty cell set to a cell value n does not conflict with the sudoku rules.
+    @details The function defines the row, column, and block of the index of a certain sudoku cell.
+    The function determines if the row, column, and block of a certain sudoku cell contain the cell value number n.
+    @param puzzle (numpy array): a puzzle getting solved
+    @param empty_index (numpy index): the index of an empty cell of the puzzle.
+    @param n (int): the cell value being tested to see whether it conflicts.
+    @return (bool): True if there exists a conflict, False if not.
     """
     i = empty_index[0]
     j = empty_index[1]

@@ -1,10 +1,20 @@
+"""!@test_no_conflict.py
+@brief This module contains a pytest function for the exists_conflict function
+@details The test function contained by this module tests that the exists_conflict function of the src module
+successfully identifies a lack of conflicts in an example.
+The test utilises an index of an example puzzle that does not contain conflicts with several values tested.
+@author Created by C. Factor on 08/12/2023
+"""
 from src.exists_conflict import exists_conflict
 import numpy as np
 
 
 def test_no_conflict():
     """
-    Tests whether there exists a conflict
+    @brief Test the exists_conflict function with an example without conflicts
+    @details The test function checks that the exists_conflict function when given an index of an example NumPy array
+    puzzle does not raise conflicts for any of three cell values that do not conflict with the sudoku rules.
+    @return True if the test is successful, otherwise False.
     """
     empty_index = (0, 0)
     puzzle = [

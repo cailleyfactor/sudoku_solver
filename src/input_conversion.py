@@ -1,11 +1,32 @@
+"""!@input_conversion.py
+@brief Converts the input.txt file puzzle to a numpy array
+@details This module contains the input_converter funtion which takes in an input.txt file with the structure
+described in the READ.me file. It checks that the input format is correct.
+It removes the delimiters, and converts the input puzzle to a 9x9 numpy array.
+It then has error traps to ensure that the puzzle is solvable. It also raises a warning if there are multiple solutions
+to the puzzle.
+@author Created by C. Factor on 08/12/2023
+"""
 import numpy as np
 
 
 def input_converter(puzzle):
+    """
+    @brief Converts the input.txt file puzzle to a numpy array
+    @details The function checks that the input puzzle is a string.
+    It then removes the delimiter symbols, as well as any spaces or line breaks.
+    If the input contained extra spaces, the function returns a message but continues.
+    The function then includes error traps to ensure only 81 digits remain in the puzzle.
+    The function then converts the integer string to a 9x9 numpy array.
+    It prints a message if there are multiple solutions to the puzzle, but continues.
+    The function includes error traps to ensure that the puzzle is not unsolvable.
+    The function will raise an error if there are duplicates in a row, column, or block.
+    @param puzzle (string): the input puzzle string containing delimiters
+    @return (numpy array): returns the input puzzle as a numpy array
+    """
     # error trap if input is not a string
     if not isinstance(puzzle, str):
-        print("Input must be a string.")
-        return 0
+        return ValueError("Input must be a string.")
 
     # removing the symbols from the input.txt to form an int string
     puzzle = puzzle.replace("---+---+---", "")
@@ -17,7 +38,7 @@ def input_converter(puzzle):
     if len_before > len_after:
         print("Input reformatted: contained extra spaces")
 
-    # Ensure digits only in th Sudoku grid
+    # Ensure digits only in th Sudoku puzzle
     if not puzzle.isdigit():
         raise ValueError(
             "Incorrect input value: incorrect delimiters or non-digit characters in the puzzle"
