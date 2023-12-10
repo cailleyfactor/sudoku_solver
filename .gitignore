@@ -1,4 +1,4 @@
-#Git ignore file modified from Python.gitignore and JetBrains.gitignore https://github.com/github/gitignore 
+#Git ignore file modified from Python.gitignore and JetBrains.gitignore https://github.com/github/gitignore
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -6,6 +6,9 @@ __pycache__/
 
 # C extensions
 *.so
+
+# Added this as a .idea file appeared in the remote repository
+.idea/
 
 # Distribution / packaging
 .Python
