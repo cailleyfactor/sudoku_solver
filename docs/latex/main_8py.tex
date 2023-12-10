@@ -1,0 +1,29 @@
+\doxysection{/\+Users/cailleyfactor/\+Documents/cf593/main.py File Reference}
+\hypertarget{main_8py}{}\label{main_8py}\index{/Users/cailleyfactor/Documents/cf593/main.py@{/Users/cailleyfactor/Documents/cf593/main.py}}
+
+
+Sudoku solver tool which calls from the src module.
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item
+namespace \mbox{\hyperlink{namespacemain}{main}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item
+\mbox{\hyperlink{namespacemain_ac23c3e50bab1b0e5666b4c2eea1881f0}{main.\+puzzle}} = file.\+read()
+\item
+\mbox{\hyperlink{namespacemain_a87088e934602e5ccd6f9571420840091}{main.\+puzzle\+\_\+output}} = solve\+\_\+sudoku\+\_\+wrapper(\mbox{\hyperlink{namespacemain_ac23c3e50bab1b0e5666b4c2eea1881f0}{puzzle}})
+\item
+\mbox{\hyperlink{namespacemain_a346fd6ed163530a7dc59f45d6a6276b1}{main.\+formatted\+\_\+output}} = output\+\_\+converter(\mbox{\hyperlink{namespacemain_a87088e934602e5ccd6f9571420840091}{puzzle\+\_\+output}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sudoku solver tool which calls from the src module.
+
+This module takes in an input.\+txt file with the structure described in the READ.\+me file. It calls the input\+\_\+converter function from the src module to convert the input to a numpy array. It calls the solve\+\_\+sudoku\+\_\+wrapper function from the src module to solve the sudoku puzzle using a backtracking algorithm. It then calls the output\+\_\+converter function from the src module to convert the outputted numpy array back to the same format as the input.\+txt file. When called from the terminal, the function prints a solution to the inputted sudoku puzzle to the terminal. \begin{DoxyAuthor}{Author}
+Created by C. Factor on 26/11/2023
+\end{DoxyAuthor}

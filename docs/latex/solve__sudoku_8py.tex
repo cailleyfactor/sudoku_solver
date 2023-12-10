@@ -1,0 +1,29 @@
+\doxysection{/\+Users/cailleyfactor/\+Documents/cf593/src/solve\+\_\+sudoku.py File Reference}
+\hypertarget{solve__sudoku_8py}{}\label{solve__sudoku_8py}\index{/Users/cailleyfactor/Documents/cf593/src/solve\_sudoku.py@{/Users/cailleyfactor/Documents/cf593/src/solve\_sudoku.py}}
+
+
+This module contains a function and a wrapper function to find empty cells in a puzzle and implement a backtracking algorithm.
+
+
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item
+namespace \mbox{\hyperlink{namespacesrc}{src}}
+\item
+namespace \mbox{\hyperlink{namespacesrc_1_1solve__sudoku}{src.\+solve\+\_\+sudoku}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item
+\mbox{\hyperlink{namespacesrc_1_1solve__sudoku_a8edd1760955ae59fc3612467d42942c2}{src.\+solve\+\_\+sudoku.\+solve\+\_\+sudoku}} (puzzle, list\+\_\+of\+\_\+empty\+\_\+cells, m=0)
+\begin{DoxyCompactList}\small\item\em Implements a backtracking algorithm to solve the sudoku puzzle. \end{DoxyCompactList}\item
+\mbox{\hyperlink{namespacesrc_1_1solve__sudoku_abe99612f3609454bceccbf3484d69355}{src.\+solve\+\_\+sudoku.\+solve\+\_\+sudoku\+\_\+wrapper}} (puzzle)
+\begin{DoxyCompactList}\small\item\em Finds empty indices and calls solve\+\_\+sudoku function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This module contains a function and a wrapper function to find empty cells in a puzzle and implement a backtracking algorithm.
+
+This module contains a wrapper function which makes a list of the indices of empty cells in a sudoku puzzle. The wrapper function then calls the solve\+\_\+sudoku function, which implements a backtracking algorithm using recursion to solve the sudoku puzzle. An exists\+\_\+conflicts function is imported to check from the src package to check for puzzle conflicts based on the sudoku rules when setting empty cell values. \begin{DoxyAuthor}{Author}
+Created by C. Factor on 07/12/2023
+\end{DoxyAuthor}

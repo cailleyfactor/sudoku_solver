@@ -1,5 +1,5 @@
 """!@file main.py
-@brief Sudoku solver tool by calling functions from the src module
+@brief Sudoku solver tool which calls from the src module
 @details This module takes in an input.txt file with the structure described in the READ.me file.
 It calls the input_converter function from the src module to convert the input to a numpy array.
 It calls the solve_sudoku_wrapper function from the src module to solve the sudoku puzzle using a backtracking algorithm.

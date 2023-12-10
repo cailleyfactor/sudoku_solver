@@ -1,0 +1,47 @@
+\doxysection{src.\+exists\+\_\+conflict Namespace Reference}
+\hypertarget{namespacesrc_1_1exists__conflict}{}\label{namespacesrc_1_1exists__conflict}\index{src.exists\_conflict@{src.exists\_conflict}}
+
+
+@exists\+\_\+conflict.py
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item
+\mbox{\hyperlink{namespacesrc_1_1exists__conflict_a839b89698b78b3a8253a3c372ec91c7d}{exists\+\_\+conflict}} (puzzle, empty\+\_\+index, n)
+\begin{DoxyCompactList}\small\item\em Checks that an empty cell set to a cell value n does not conflict with the sudoku rules. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+@exists\+\_\+conflict.py
+
+Checks that an empty cell value (n) does not break the Sudoku rules
+
+This module contains the exists\+\_\+conflict function. The function takes in a numpy array puzzle getting solved, a cell index and a cell value. The function tests whether the cell value can be set for the cell index and not cause conflicts with the Sudoku rules, i.\+e., the cell value is not already used in the same block, row, or column. \begin{DoxyAuthor}{Author}
+Created by C. Factor on 08/12/2023
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacesrc_1_1exists__conflict_a839b89698b78b3a8253a3c372ec91c7d}\label{namespacesrc_1_1exists__conflict_a839b89698b78b3a8253a3c372ec91c7d}
+\index{src.exists\_conflict@{src.exists\_conflict}!exists\_conflict@{exists\_conflict}}
+\index{exists\_conflict@{exists\_conflict}!src.exists\_conflict@{src.exists\_conflict}}
+\doxysubsubsection{\texorpdfstring{exists\_conflict()}{exists\_conflict()}}
+{\footnotesize\ttfamily src.\+exists\+\_\+conflict.\+exists\+\_\+conflict (\begin{DoxyParamCaption}\item[{}]{puzzle,  }\item[{}]{empty\+\_\+index,  }\item[{}]{n }\end{DoxyParamCaption})}
+
+
+
+Checks that an empty cell set to a cell value n does not conflict with the sudoku rules.
+
+The function defines the row, column, and block of the index of a certain sudoku cell. The function determines if the row, column, and block of a certain sudoku cell contain the cell value number n.
+\begin{DoxyParams}{Parameters}
+{\em puzzle} & (numpy array)\+: a puzzle getting solved \\
+\hline
+{\em empty\+\_\+index} & (numpy index)\+: the index of an empty cell of the puzzle. \\
+\hline
+{\em n} & (int)\+: the cell value being tested to see whether it conflicts. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(bool)\+: True if there exists a conflict, False if not.
+\end{DoxyReturn}

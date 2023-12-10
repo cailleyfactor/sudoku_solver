@@ -46,10 +46,16 @@ def solve_sudoku_wrapper(puzzle):
     @param puzzle (numpy array): the input puzzle
     @return: returns the solve output puzzle, as a numpy array
     """
-    # find indices of empty cells
+    # find indices of empty cells, i.e., cells that have a value of zero
     all_empty_indices = np.where(puzzle == 0)
 
-    # To access tuples of a zip, need to first make into a list
+    # To access the indices of empty cells, create a list of tuples
     list_of_empty_cells = list(zip(*all_empty_indices))
-    solve_sudoku(puzzle, list_of_empty_cells, m=0)
+
+    # calling the solve_sudoku function to implement the sudoku solver algorithm starting from the first empty cell
+    result = solve_sudoku(puzzle, list_of_empty_cells, m=0)
+
+    # raise an error if the backtracking algorithm fails to solve the puzzle and you've backtracked back to the beginning
+    if result is False:
+        raise ValueError("Sudoku puzzle cannot be solved.")
     return puzzle
