@@ -1,5 +1,3 @@
-# Use an official base image
-# Chat GPT suggested this when I inputted an error message from using a different base image
 # This is a good minimimal installer for Conda
 FROM continuumio/miniconda3
 
