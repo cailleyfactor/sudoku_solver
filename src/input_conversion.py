@@ -56,7 +56,9 @@ def input_converter(puzzle):
     puzzle_no_zeros = puzzle[puzzle != 0]
     puzzle_no_zeros = puzzle_no_zeros.flatten()
     if len(puzzle_no_zeros) < 17:
-        print("There are multiple solutions to this input puzzle - add clues")
+        print(
+            "There are multiple solutions to this input puzzle - add more clues, i.e., filled in cells"
+        )
 
     # error trap to make sure that there are no duplicates in a puzzle row
     for i in range(9):
