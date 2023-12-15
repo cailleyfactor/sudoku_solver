@@ -12,6 +12,7 @@ When called from the terminal, the function prints a solution to the inputted su
 from src.solve_sudoku import solve_sudoku_wrapper
 from src.output_conversion import output_converter
 from src.input_conversion import input_converter
+from src.rearrange import rearrange, arrange_back
 
 # Import input.txt file using relative imports.
 try:
@@ -27,8 +28,14 @@ except FileNotFoundError:
 # Convert the input.txt file output into a numpy array
 puzzle = input_converter(puzzle)
 
+# Optimize puzzle shape for fast solving
+puzzle, keys = rearrange(puzzle)
+
 # Call the wrapper function to solve the puzzle
 puzzle_output = solve_sudoku_wrapper(puzzle)
+
+# Optimize puzzle shape for fast solving
+puzzle_output = arrange_back(puzzle_output, keys)
 
 # convert the solved puzzle back into the correct output format and print to terminal
 formatted_output = output_converter(puzzle_output)

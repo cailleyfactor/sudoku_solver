@@ -7,7 +7,7 @@ The project focused on research computing best practice over algorithmic complex
 First clone the repository from git.
 
 To run the code, we provided a dockerfile in the root directory with the environment needed to run the code.
-To run the code from the terminal use, e.g.,
+To run the code from the terminal navigate to the root directory and use, e.g.,
 $docker build -t [image name of choice] .
 $docker run [image name of choice]
 
@@ -59,6 +59,9 @@ ChatGPT version 4.0 was used for:
 - Fixing the base environment in my dockerfile
   - Prompt was the error message received from utilising a different base image
   - ChatGPT suggested the use of miniconda as a good base image, which we implemented
+- Used to understand how to sort and access values from a dictionary storing tuples
+  - The following prompt was used "how to sort and access values from a dictionary storing tuples"
+  - The code was used to understand how to sort and access the dictionary values within the rearrange function of the rearrange.py module
 
 ## License
 Released 2023 by Cailley Factor.

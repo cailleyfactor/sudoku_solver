@@ -29,6 +29,7 @@ def exists_conflict(puzzle, empty_index, n):
     row_block_end = ((i // 3) * 3) + 3
     clmn_block_start = (j // 3) * 3
     clmn_block_end = ((j // 3) * 3) + 3
+    # define block
     puzzle_block = puzzle[
         row_block_start:row_block_end, clmn_block_start:clmn_block_end
     ]
