@@ -15,17 +15,17 @@ An input puzzle can be placed in the input.txt file. It should be of the format 
 numbers with zero representing unknown values and |,+,- separating cells.
 An example input.txt puzzle is below.
 
-$ cat input.txt
-000|007|000
-000|009|504
-000|050|169
----+---+---
-080|000|305
-075|000|290
-406|000|080
----+---+---
-762|080|000
-103|900|000
+$ cat input.txt\
+000|007|000\
+000|009|504\
+000|050|169\
+---+---+---\
+080|000|305\
+075|000|290\
+406|000|080\
+---+---+---\
+762|080|000\
+103|900|000\
 000|600|000
 
 With the appropriate environment, the code can also be run from the terminal
