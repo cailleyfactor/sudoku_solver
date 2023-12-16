@@ -17,12 +17,12 @@ from src.output_conversion import output_converter
 from src.input_conversion import input_converter
 from src.rearrange import rearrange, arrange_back
 
-# Import input.txt file using relative imports.
+# Import the input.txt file using relative imports.
 try:
     with open("input.txt", "r") as file:
         puzzle = file.read()
 
-# If there is an issue finding the file when importing, print an error message.
+# If there is an issue finding the file when importing, print an error message
 except FileNotFoundError:
     print(
         "The file 'input.txt' was not found. Make sure it is placed in the root directory."
@@ -31,15 +31,15 @@ except FileNotFoundError:
 # Convert the input.txt file output into a numpy array
 puzzle = input_converter(puzzle)
 
-# Optimize puzzle shape for fast solving
+# Reorder puzzle blocks for faster solving
 puzzle, keys = rearrange(puzzle)
 
 # Call the wrapper function to solve the puzzle
 puzzle_output = solve_sudoku_wrapper(puzzle)
 
-# Optimize puzzle shape for fast solving
+# Arrange back puzzle blocks to original order
 puzzle_output = arrange_back(puzzle_output, keys)
 
-# convert the solved puzzle back into the correct output format and print to terminal
+# Convert the solved puzzle back into the correct output format and print to the terminal
 formatted_output = output_converter(puzzle_output)
 print(formatted_output)
