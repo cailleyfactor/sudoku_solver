@@ -56,7 +56,7 @@ ChatGPT version 4.0 was used for:
 - Coding a python script to read from a CProfile file:
   - The following prompt was used: "standard practice to save a CProfile file and read from it"
   - The code was used in the profile.py file to read from the profile_output.prof file and extract key information
-- Fixing the base environment in my dockerfile
+- Fixing the base environment in the dockerfile
   - Prompt was the error message received from utilising a different base image
   - ChatGPT suggested the use of miniconda as an appropriate base image, which was implemented
 - Producing an example puzzle and solution for the unit test for the solve\_sudoku\_wrapper function
