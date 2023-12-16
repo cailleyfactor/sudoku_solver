@@ -4,7 +4,7 @@ backtracking algorithm.
 @details This module contains a wrapper function which makes a list of the indices of empty cells in a sudoku puzzle.
 The wrapper function then calls the solve_sudoku function, which implements a backtracking algorithm using recursion to
 solve the sudoku puzzle.
-An exists_conflicts function is imported to check from the src package to check for puzzle conflicts based on the sudoku
+An exists_conflicts function is imported from the src package to check for puzzle conflicts based on the sudoku
 rules when setting empty cell values.
 @author Created by C. Factor on 07/12/2023
 """
@@ -16,11 +16,16 @@ from src.exists_conflict import exists_conflict
 def solve_sudoku(puzzle, list_of_empty_cells, m=0):
     """
     @brief Implements a backtracking algorithm to solve the sudoku puzzle.
-    @details Backtracking algorithm which solves the sudoku puzzle using recursion
+    @details The algorithm includes a base case and a recursive case.
+    The base case checks that all the empty cells have been filled and returns true,
+    when this is the case. The recursive case loops through the values 1 through 9. For each value it checks if assigning
+    this value to the empty cell creates a conflict by calling the exists_conflict function. If the assignment does not
+    create a conflict, it assigns the value to the empty cell and recursively calls itself to solve the next empty cell.
+    Otherwise, it sets the current empty cell value to 0 and backtracks.
     @param puzzle (numpy array): the input puzzle
-    @param list_of_empty_cells (list): the list of the indices of empty cells in the input_puzzle
-    @param m (int): the index of the empty cell list, initially set to zero.
-    @return True if the puzzle is solved, False if it fails
+    @param list_of_empty_cells (list of tupules): the list of the indices of empty cells in the input puzzle
+    @param m (int): the index of the empty cell list, initially set to zero
+    @return True if the puzzle is solved, False if it fails.
     """
     # base case
     if m == len(list_of_empty_cells):
@@ -41,10 +46,11 @@ def solve_sudoku(puzzle, list_of_empty_cells, m=0):
 
 def solve_sudoku_wrapper(puzzle):
     """
-    @brief Finds empty indices and calls solve_sudoku function
-    @details Determines empty indices and calls solve_sudoku_wrapper to run the backtracking algorithm
+    @brief Finds empty indices and calls the solve_sudoku function.
+    @details Finds the empty indices of the input puzzle and calls the solve_sudoku function to run the
+    backtracking algorithm.
     @param puzzle (numpy array): the input puzzle
-    @return: returns the solve output puzzle, as a numpy array
+    @return: returns the solved output puzzle, as a numpy array
     """
     # find indices of empty cells, i.e., cells that have a value of zero
     all_empty_indices = np.where(puzzle == 0)

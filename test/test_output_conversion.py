@@ -1,7 +1,7 @@
 """!@test_output_conversion.py
-@brief This module contains a pytest function for the output_converter function
+@brief This module contains a pytest function for the output_converter function.
 @details The test function contained by this module tests that the output_converter function of the src module
-successfully converts a NumPy array into a specific string format, using an example puzzle.
+successfully converts a NumPy array into a specific string format for an example puzzle.
 @author Created by C. Factor on 08/12/2023
 """
 from src.output_conversion import output_converter
@@ -10,7 +10,7 @@ import numpy as np
 
 def test_output_converter():
     """
-    @brief Test the output_converter function
+    @brief Tests the output_converter function.
     @details This test function checks that the output_converter function converts a pre-defined NumPy array puzzle
     into a string format with specific delimiters.
     @return True if the test is successful, otherwise False.

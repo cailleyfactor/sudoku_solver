@@ -58,8 +58,11 @@ ChatGPT version 4.0 was used for:
   - The code was used in the profile.py file to read from the profile_output.prof file and extract key information
 - Fixing the base environment in my dockerfile
   - Prompt was the error message received from utilising a different base image
-  - ChatGPT suggested the use of miniconda as a good base image, which we implemented
-- Used to understand how to sort and access values from a dictionary storing tuples
+  - ChatGPT suggested the use of miniconda as an appropriate base image, which was implemented
+- Producing an example puzzle and solution for the unit test for the solve\_sudoku\_wrapper function
+  - The following prompt was used: ``example sudoku puzzle and answer in python as NumPy array''.
+  - The NumPy array puzzles were then used in the unit test.
+- Storing and accessing values from a dictionary storing tuples
   - The following prompt was used "how to sort and access values from a dictionary storing tuples"
   - The code was used to understand how to sort and access the dictionary values within the rearrange function of the rearrange.py module
 

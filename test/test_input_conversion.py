@@ -10,9 +10,9 @@ import numpy as np
 
 def test_input_converter():
     """
-    @brief Test the input_converter function
+    @brief Tests the input_converter function.
     @details This test function checks that the input_converter function converts a pre-defined input puzzle in a
-    string format with specific delimiters into its pre-defined NumPy array representation.
+    string format with specific delimiters into its NumPy array representation.
     @return True if the test is successful, otherwise False.
     """
     input_puzzle = (
