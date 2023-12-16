@@ -1,7 +1,9 @@
 # Research Computing Coursework
 ## Description
 The aim of this project was to create a sudoku solver using research computing best practice.
-The project focused on research computing best practice over algorithmic complexity.
+The project focused on research computing best practice over algorithmic complexity. A PDF of a report describing the project
+in detail is provided in the report folder in the root directory. Excluding the appendix, the word count for the report
+is 2982 words.
 
 ## Usage
 First clone the repository from git.
