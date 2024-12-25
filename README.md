@@ -1,9 +1,6 @@
 # Research Computing Coursework
 ## Description
-The aim of this project was to create a sudoku solver using research computing best practice.
-The project focused on research computing best practice over algorithmic complexity. A PDF of a report describing the project
-in detail is provided in the report folder in the root directory. Excluding the appendix, the word count for the report
-is 2982 words.
+The aim of this project was to create a sudoku solver using research computing best practice, focusing on research computing best practice over algorithmic complexity
 
 ## Usage
 First clone the repository from git.
@@ -39,34 +36,6 @@ $ python main.py input.txt
 Detailed documentation is available by running the Doxyfile using doxygen in the docs file in the root directory.
 This can be run by navigating in the docs file and running doxygen with:
 $doxygen
-
-## Auto-generation tool citations
-ChatGPT version 4.0 was used for:
-- Prototyping the import of the input.txt file into the main.py module.
-  - The following prompt was used: "methods of importing files efficiently from another directory in python".
-  - Several options were provided and in the end, we decided on simple relative imports.
-- Prototyping the efficient conversion of a string of integers into a numpy array
-  - The following prompt was used: "how to most efficiently convert a string of integers into a numpy array"
-  - This provided the insight to use list comprehension to achieve this and an example list comprehension code
-  - This was modified to be used in the sudoku solver context
-- Prototyping maximising the use of numpy vector operations over loops
-  - The following prompt was used: "vectorisation operations in numpy"
-  - This gave some insights into useful vector operations such as incorporating np.any() and np.unique()
-- Changing the format of the output of "np.where(puzzle == 0)" in the solve_sudoku_wrapper function of the solve_sudoku.py module
-  - The following prompt was used "how to index np.where() outputs"
-  - The code was used to convert a tupule of arrays into a list of tupules containing the indices.
-- Coding a python script to read from a CProfile file:
-  - The following prompt was used: "standard practice to save a CProfile file and read from it"
-  - The code was used in the profile.py file to read from the profile_output.prof file and extract key information
-- Fixing the base environment in the dockerfile
-  - Prompt was the error message received from utilising a different base image
-  - ChatGPT suggested the use of miniconda as an appropriate base image, which was implemented
-- Producing an example puzzle and solution for the unit test for the solve\_sudoku\_wrapper function
-  - The following prompt was used: ``example sudoku puzzle and answer in python as NumPy array''.
-  - The NumPy array puzzles were then used in the unit test.
-- Storing and accessing values from a dictionary storing tuples
-  - The following prompt was used "how to sort and access values from a dictionary storing tuples"
-  - The code was used to understand how to sort and access the dictionary values within the rearrange function of the rearrange.py module
 
 ## License
 Released 2023 by Cailley Factor.
